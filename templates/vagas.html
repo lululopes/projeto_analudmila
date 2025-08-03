@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vagas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/vagas.css') }}" />
+</head>
+
+<body>
+  <header>
+    <a href="{{ url_for('index') }}">
+      <img id="logo" src="{{ url_for('static', filename='logo/alianca-aurora.png') }}" alt="Logo" />
+    </a>
+    <div class="area-menu">
+      <a href="{{ url_for('cadastro') }}" class="header-link">Cadastro</a>
+      <a href="{{ url_for('login') }}" class="header-link">Login</a>
+      <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+    </div>
+  </header>
+
+  <div id="menuHorizontal" class="menu-horizontal">
+    <a href="{{ url_for('index') }}" role="button">Home</a>
+    <a href="{{ url_for('feed') }}" role="button">Feed</a>
+    <a href="{{ url_for('cursos') }}" role="button">Cursos</a>
+    <a href="{{ url_for('perfil') }}" role="button">Perfil</a>
+    <a href="{{ url_for('vagas') }}" role="button">Vagas</a>
+    <a href="{{ url_for('chat') }}" role="button">Atendimento</a>
+
+    <div class="barra-busca">
+      <input type="text" placeholder="Buscar" />
+      <button class="botao-buscar">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <section class="vaga-hero">
+      <div class="vaga-hero-content">
+        <h1>Explore Oportunidades Profissionais</h1>
+        <p>Descubra vagas alinhadas com o seu perfil e dê o próximo passo na sua carreira.</p>
+        <a href="#vagas-destaque" class="botao-vagas">Ver Vagas</a>
+      </div>
+
+      <div class="vaga-hero-video">
+        <video autoplay muted loop playsinline>
+          <source src="{{ url_for('static', filename='Imagens/3255275-uhd_3840_2160_25fps.mp4') }}" type="video/mp4" />
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+    </section>
+
+    <section class="vagas" id="vagas-destaque">
+      <h3 class="titulo-vagas">Vagas em Destaque</h3>
+      <div class="vagas-container">
+        <div class="vaga-card">
+          <h2 class="vaga-titulo">Desenvolvedor Back-End Java SR</h2>
+          <p class="vaga-empresa">Empresa: Bradesco</p>
+          <p class="vaga-localizacao">Local: Barueri, SP</p>
+          <a href="https://bradesco.csod.com/ux/ats/careersite/1/home/requisition/65326?c=bradesco&sq=req65326&source=LinkedIn"
+            target="_blank" class="botao-candidatar">Candidatar-se</a>
+        </div>
+        <div class="vaga-card">
+          <h2 class="vaga-titulo">Designer UI/UX</h2>
+          <p class="vaga-empresa">Empresa: Growth - Negócios Digitais</p>
+          <p class="vaga-localizacao">Local: Lapa, SP</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSem5gZvzY-rmR6MS9GWhNLDEMJVMXVxXncqhVx85m85IidhVg/viewform?pli=1"
+            target="_blank" class="botao-candidatar">Candidatar-se</a>
+        </div>
+        <div class="vaga-card">
+          <h2 class="vaga-titulo">Analista de Dados</h2>
+          <p class="vaga-empresa">Empresa: iFood</p>
+          <p class="vaga-localizacao">Local: Osasco, SP</p>
+          <a href="https://carreiras.ifood.com.br/job/7952032002/" target="_blank" class="botao-candidatar">Candidatar-se</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-container">
+      <div class="coluna">
+        <div class="coluna-title">Projeto</div>
+        <p><a href="{{ url_for('apresentacao') }}"><i class="fas fa-user-circle"></i> Apresentação Pessoal</a></p>
+        <p><a href="{{ url_for('contribuicao') }}"><i class="fas fa-hands-helping"></i> Contribuição no Projeto</a></p>
+      </div>
+
+      <div class="coluna">
+        <div class="coluna-title"> Institucional</div>
+        <p><a href="{{ url_for('sobre') }}"><i class="fas fa-info-circle"></i> Sobre Nós</a></p>
+        <p><a href="{{ url_for('contato') }}"><i class="fas fa-envelope"></i> Contato</a></p>
+      </div>
+
+      <div class="coluna">
+        <div class="coluna-title"> Legal</div>
+        <p><a href="{{ url_for('politica') }}"><i class="fas fa-user-secret"></i> Política de Privacidade</a></p>
+        <p><a href="{{ url_for('termos') }}"><i class="fas fa-file-contract"></i> Termos de Uso</a></p>
+      </div>
+
+      <div class="coluna">
+        <div class="coluna-title">Parceiros</div>
+        <p><a href="https://www.sp.senac.br/senac-osasco" target="_blank"><i class="fas fa-school"></i> Senac</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle menu no clique do hamburger
+    function toggleMenu() {
+      var menu = document.getElementById("menuHorizontal");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</body>
+
+</html>

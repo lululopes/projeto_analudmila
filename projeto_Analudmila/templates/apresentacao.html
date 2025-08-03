@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apresentação Pessoal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/apresentacao.css') }}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <a href="{{ url_for('index') }}"><img id="logo" src="{{ url_for('static', filename='logo/alianca-aurora.png') }}"
+        alt="Logo" /></a>
+    <div class="area-menu">
+      <a href="{{ url_for('cadastro') }}" class="header-link">Cadastro</a>
+      <a href="{{ url_for('login') }}" class="header-link">Login</a>
+      <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+    </div>
+  </header>
+
+    <div id="menuHorizontal" class="menu-horizontal">
+      <a href="{{ url_for('index') }}" role="button">Home</a>
+      <a href="{{ url_for('feed') }}" role="button">Feed</a>
+      <a href="{{ url_for('cursos') }}" role="button">Cursos</a>
+      <a href="{{ url_for('perfil') }}" role="button">Perfil</a>
+      <a href="{{ url_for('vagas') }}" role="button">Vagas</a>
+      <a href="{{ url_for('chat') }}" role="button">Atendimento</a>
+
+      <div class="barra-busca">
+        <input type="text" placeholder="Buscar" />
+        <button class="botao-buscar">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+
+    <main>
+      <section class="content-section">
+        <div class="titulo-apresentacao">
+          <img src="{{ url_for('static', filename='imagens/foto4.jpeg') }}"
+            alt="Foto pessoal" class="icone">
+          <h1 class="main-title">Apresentação Pessoal</h1>
+        </div>
+        <p class="lead-text">Oi! Eu sou a <strong>Ana Ludmila</strong>, tenho 18 anos e faço parte da criação da
+          <strong>Aliança Aurora</strong>, um projeto feito com muito carinho e propósito.
+        </p>
+
+        <p>Desde nova, percebi como ser mulher em muitos espaços, principalmente online nem sempre é fácil. A gente
+          escuta coisas que não deveria, é ignorada ou subestimada. Isso sempre me incomodou.</p>
+
+        <p>Foi daí que surgiu a vontade de ajudar a criar algo diferente: um lugar onde mulheres se sintam seguras,
+          bem-vindas e com espaço para crescer e se conectar com outras que passam por coisas parecidas.</p>
+
+        <p>Nas horas vagas, eu gosto de jogar, treinar, ouvir música, ler, assistir filmes e passar tempo com a minha
+          família. Essas coisas simples também fazem parte de quem eu sou.</p>
+
+        <p>Com a Aliança Aurora, quero fazer parte de uma mudança, mesmo que pequena. Ajudando outras mulheres a se
+          sentirem mais confiantes, respeitadas e livres para ser quem são.</p>
+
+        <a href="https://mail.google.com/mail/u/0/?fs=1&to=ludmilalopes416@gmail.com&tf=cm" target="_blank"
+          class="btn-primary">Fale comigo!!</a>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <div class="rodape-container">
+
+        <div class="coluna">
+          <div class="coluna-title">Projeto</div>
+          <p><a href="{{ url_for('apresentacao') }}"><i class="fas fa-user-circle"></i> Apresentação Pessoal</a></p>
+          <p><a href="{{ url_for('contribuicao') }}"><i class="fas fa-hands-helping"></i> Contribuição no Projeto</a>
+          </p>
+        </div>
+
+        <div class="coluna">
+          <div class="coluna-title"> Institucional</div>
+          <p><a href="{{ url_for('sobre') }}"><i class="fas fa-info-circle"></i> Sobre Nós</a></p>
+          <p><a href="{{ url_for('contato') }}"><i class="fas fa-envelope"></i> Contato</a></p>
+        </div>
+
+        <div class="coluna">
+          <div class="coluna-title"> Legal</div>
+          <p><a href="{{ url_for('politica') }}"><i class="fas fa-user-secret"></i> Política de Privacidade</a></p>
+          <p><a href="{{ url_for('termos') }}"><i class="fas fa-file-contract"></i> Termos de Uso</a></p>
+        </div>
+
+        <div class="coluna">
+          <div class="coluna-title">Parceiros</div>
+          <p><a href="https://www.sp.senac.br/senac-osasco" target="_blank"><i class="fas fa-school"></i>
+              Senac</a></p>
+        </div>
+
+      </div>
+    </footer>
+    <script>
+      function toggleMenu() {
+        var menu = document.getElementById("menuHorizontal");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      }
+    </script>
+</body>
+
+</html>

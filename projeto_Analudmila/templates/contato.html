@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contato.css') }}">
+  <!-- link para o icone de enviar -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+    <a href="{{ url_for('index') }}"><img id="logo" src="{{ url_for('static', filename='logo/alianca-aurora.png') }}"
+        alt="Logo" /></a>
+    <div class="area-menu">
+      <a href="{{ url_for('cadastro') }}" class="header-link">Cadastro</a>
+      <a href="{{ url_for('login') }}" class="header-link">Login</a>
+      <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+    </div>
+  </header>
+    <div id="menuHorizontal" class="menu-horizontal">
+      <a href="{{ url_for('index') }}" role="button">Home</a>
+      <a href="{{ url_for('feed') }}" role="button">Feed</a>
+      <a href="{{ url_for('cursos') }}" role="button">Cursos</a>
+      <a href="{{ url_for('perfil') }}" role="button">Perfil</a>
+      <a href="{{ url_for('vagas') }}" role="button">Vagas</a>
+      <a href="{{ url_for('chat') }}" role="button">Atendimento</a>
+
+      <div class="barra-busca">
+        <input type="text" placeholder="Buscar" />
+        <button class="botao-buscar">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+
+  <main>
+    <section class="contato-container">
+      <div class="contato-box">
+        <h1 class="titulo-contato"><i class="fas fa-envelope-open-text"></i> Fale Conosco</h1>
+        <p class="texto-contato">Dúvidas, ideias ou sugestões? Preencha o formulário abaixo.💬</p>
+
+        <form class="formulario-contato">
+          <label for="nome"><!--<i class="fas fa-user"></i>--> Nome:</label>
+          <input type="text" id="nome" placeholder="Seu nome" required>
+
+          <label for="email"><!--<i class="fas fa-envelope"></i>--> Email:</label>
+          <input type="email" id="email" placeholder="Seu e-mail" required>
+
+          <label for="mensagem"><!--<i class="fas fa-comment-dots"></i>--> Mensagem:</label>
+          <textarea id="mensagem" placeholder="Como podemos te ajudar hoje?" required></textarea>
+
+
+          <button type="submit">Enviar agora</button>
+
+
+        </form>
+      </div>
+    </section>
+  </main>
+
+   <footer class="rodape">
+        <div class="rodape-container">
+
+            <div class="coluna">
+                <div class="coluna-title">Projeto</div>
+                <p><a href="{{ url_for('apresentacao') }}"><i class="fas fa-user-circle"></i> Apresentação Pessoal</a></p>
+                <p><a href="{{ url_for('contribuicao') }}"><i class="fas fa-hands-helping"></i> Contribuição no Projeto</a></p>
+            </div>
+
+            <div class="coluna">
+                <div class="coluna-title"> Institucional</div>
+                <p><a href="{{ url_for('sobre') }}"><i class="fas fa-info-circle"></i> Sobre Nós</a></p>
+                <p><a href="{{ url_for('contato') }}"><i class="fas fa-envelope"></i> Contato</a></p>
+            </div>
+
+            <div class="coluna">
+                <div class="coluna-title"> Legal</div>
+                <p><a href="{{ url_for('politica') }}"><i class="fas fa-user-secret"></i> Política de Privacidade</a></p>
+                <p><a href="{{ url_for('termos') }}"><i class="fas fa-file-contract"></i> Termos de Uso</a></p>
+            </div>
+
+            <div class="coluna">
+                <div class="coluna-title">Parceiros</div>
+                <p><a href="https://www.sp.senac.br/senac-osasco" target="_blank"><i class="fas fa-school"></i>
+                        Senac</a></p>
+            </div>
+
+        </div>
+    </footer>
+
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menuHorizontal");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</body>
+
+</html>

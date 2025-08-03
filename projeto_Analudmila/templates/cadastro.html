@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Lato&family=Roboto:wght@100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styleLogineCadastro.css') }}">
+  <!-- link para o icone de enviar -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Cadastro</title>
+</head>
+
+<body>
+  <header>
+    <a href="{{ url_for('index') }}"><img id="logo" src="{{ url_for('static', filename='logo/alianca-aurora.png') }}"
+        alt="Logo" /></a>
+    <div class="area-menu">
+      <a href="{{ url_for('cadastro') }}" class="header-link">Cadastro</a>
+      <a href="{{ url_for('login') }}" class="header-link">Login</a>
+      <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+    </div>
+  </header>
+  <div id="menuHorizontal" class="menu-horizontal">
+    <a href="{{ url_for('index') }}" role="button">Home</a>
+    <a href="{{ url_for('feed') }}" role="button">Feed</a>
+    <a href="{{ url_for('cursos') }}" role="button">Cursos</a>
+    <a href="{{ url_for('perfil') }}" role="button">Perfil</a>
+    <a href="{{ url_for('vagas') }}" role="button">Vagas</a>
+    <a href="{{ url_for('chat') }}" role="button">Atendimento</a>
+
+    <div class="barra-busca">
+      <input type="text" placeholder="Buscar" />
+      <button class="botao-buscar">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+  <main>
+    <section>
+      <div class="form-container">
+        <p class="title">Crie sua conta</p>
+        <form class="form">
+          <input type="text" class="input" placeholder="Nome completo" required />
+          <input type="email" class="input" placeholder="Email ou CPF" required />
+
+          <div class="senha-container">
+            <input type="password" id="senha-cadastro" class="input" placeholder="Digite sua senha" required />
+            <button type="button" class="btn-senha" onclick="togglePassword('senha-cadastro')"></button>
+          </div>
+
+          <div class="senha-container">
+            <input type="password" id="confirmar-senha" class="input" placeholder="Confirme sua senha" required />
+            <button type="button" class="btn-senha" onclick="togglePassword('confirmar-senha')"></button>
+          </div>
+
+          <button class="form-btn" type="submit">Cadastrar</button>
+        </form>
+
+        <p class="sign-up-label">
+          Já tem uma conta?
+          <a href="/HTML/login.html" class="sign-up-link">Entrar</a>
+        </p>
+
+        <div class="buttons-container">
+          <a href="https://www.facebook.com" class="facebook-login-button">
+            <img src="{{ url_for('static', filename='Imagens/facebook.png') }}" alt="Facebook" class="facebook-icon" />
+            <span>Entrar com Facebook</span>
+          </a>
+
+          <a href="https://www.google.com" class="google-login-button">
+            <img src="{{ url_for('static', filename='Imagens/google.png') }}" alt="Google" class="google-icon" />
+            <span>Entrar com Google</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-container">
+
+      <div class="coluna">
+        <div class="coluna-title">Projeto</div>
+        <p><a href="{{ url_for('apresentacao') }}"><i class="fas fa-user-circle"></i> Apresentação Pessoal</a></p>
+        <p><a href="{{ url_for('contribuicao') }}"><i class="fas fa-hands-helping"></i> Contribuição no Projeto</a></p>
+      </div>
+
+      <div class="coluna">
+        <div class="coluna-title"> Institucional</div>
+        <p><a href="{{ url_for('sobre') }}"><i class="fas fa-info-circle"></i> Sobre Nós</a></p>
+        <p><a href="{{ url_for('contato') }}"><i class="fas fa-envelope"></i> Contato</a></p>
+      </div>
+
+      <div class="coluna">
+        <div class="coluna-title"> Legal</div>
+        <p><a href="{{ url_for('politica') }}"><i class="fas fa-user-secret"></i> Política de Privacidade</a></p>
+        <p><a href="{{ url_for('termos') }}"><i class="fas fa-file-contract"></i> Termos de Uso</a></p>
+      </div>
+
+      <div class="coluna">
+        <div class="coluna-title">Parceiros</div>
+        <p><a href="https://www.sp.senac.br/senac-osasco" target="_blank"><i class="fas fa-school"></i>
+            Senac</a></p>
+      </div>
+
+    </div>
+  </footer>
+  <script>
+    // aqui aparece o navbar embaixo do cabeçalho, quando clicamos no hamburger, javascript do proprio w3schools
+    function toggleMenu() {
+      var menu = document.getElementById("menuHorizontal");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</body>
+
+</html>

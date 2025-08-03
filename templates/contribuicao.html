@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contribuição no Projeto</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contribuicao.css') }}">
+  <!-- link para o icone de enviar -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+    <a href="{{ url_for('index') }}"><img id="logo" src="{{ url_for('static', filename='logo/alianca-aurora.png') }}"
+        alt="Logo" /></a>
+    <div class="area-menu">
+      <a href="{{ url_for('cadastro') }}" class="header-link">Cadastro</a>
+      <a href="{{ url_for('login') }}" class="header-link">Login</a>
+      <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+    </div>
+  </header>
+    <div id="menuHorizontal" class="menu-horizontal">
+      <a href="{{ url_for('index') }}" role="button">Home</a>
+      <a href="{{ url_for('feed') }}" role="button">Feed</a>
+      <a href="{{ url_for('cursos') }}" role="button">Cursos</a>
+      <a href="{{ url_for('perfil') }}" role="button">Perfil</a>
+      <a href="{{ url_for('vagas') }}" role="button">Vagas</a>
+      <a href="{{ url_for('chat') }}" role="button">Atendimento</a>
+
+      <div class="barra-busca">
+        <input type="text" placeholder="Buscar" />
+        <button class="botao-buscar">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+  <main>
+    <section class="contribuicao-section">
+      <h1 class="titulo-contribuicao"><i class="fas fa-star"></i> Minha Contribuição no Projeto</h1>
+      <p>Contribuir com este projeto é uma realização pessoal, pois acredito profundamente que toda mulher merece se
+        sentir <strong>inclusa, respeitada e valorizada</strong>. Lutar por mais inclusão, equidade e representatividade
+        feminina é um dos meus maiores objetivos.</p>
+
+      <p>Participei da criação de todas as páginas, da identidade visual e do desenvolvimento da marca <strong>Aliança
+          Aurora</strong>, sempre pensando em como acolher e representar cada mulher que acessar essa plataforma.</p>
+
+      <p>Desde o conceito até a escolha das cores e do tom das mensagens, tudo foi pensado com cuidado, empatia e
+        propósito. Desejo que aqui cada mulher encontre oportunidades reais, conexões verdadeiras e um espaço onde possa
+        crescer sem medo de ser quem é.</p>
+
+      <p class="conclusao">Essa contribuição é mais do que técnica — é uma entrega com carinho, por um projeto que nasce
+        para transformar.</p>
+    </section>
+
+  </main>
+
+   <footer class="rodape">
+        <div class="rodape-container">
+
+            <div class="coluna">
+                <div class="coluna-title">Projeto</div>
+                <p><a href="{{ url_for('apresentacao') }}"><i class="fas fa-user-circle"></i> Apresentação Pessoal</a></p>
+                <p><a href="{{ url_for('contribuicao') }}"><i class="fas fa-hands-helping"></i> Contribuição no Projeto</a></p>
+            </div>
+
+            <div class="coluna">
+                <div class="coluna-title"> Institucional</div>
+                <p><a href="{{ url_for('sobre') }}"><i class="fas fa-info-circle"></i> Sobre Nós</a></p>
+                <p><a href="{{ url_for('contato') }}"><i class="fas fa-envelope"></i> Contato</a></p>
+            </div>
+
+            <div class="coluna">
+                <div class="coluna-title"> Legal</div>
+                <p><a href="{{ url_for('politica') }}"><i class="fas fa-user-secret"></i> Política de Privacidade</a></p>
+                <p><a href="{{ url_for('termos') }}"><i class="fas fa-file-contract"></i> Termos de Uso</a></p>
+            </div>
+
+            <div class="coluna">
+                <div class="coluna-title">Parceiros</div>
+                <p><a href="https://www.sp.senac.br/senac-osasco" target="_blank"><i class="fas fa-school"></i>
+                        Senac</a></p>
+            </div>
+
+        </div>
+    </footer>
+
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menuHorizontal");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</body>
+
+</html>

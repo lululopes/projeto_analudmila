@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cursos.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>Home</title>
+</head>
+
+<body>
+  <header>
+    <a href="{{ url_for('index') }}">
+      <img id="logo" src="{{ url_for('static', filename='logo/alianca-aurora.png') }}" alt="Logo" />
+    </a>
+    <div class="area-menu">
+      <a href="{{ url_for('cadastro') }}" class="header-link">Cadastro</a>
+      <a href="{{ url_for('login') }}" class="header-link">Login</a>
+      <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+    </div>
+  </header>
+
+  <div id="menuHorizontal" class="menu-horizontal">
+    <a href="{{ url_for('index') }}" role="button">Home</a>
+    <a href="{{ url_for('feed') }}" role="button">Feed</a>
+    <a href="{{ url_for('cursos') }}" role="button">Cursos</a>
+    <a href="{{ url_for('perfil') }}" role="button">Perfil</a>
+    <a href="{{ url_for('vagas') }}" role="button">Vagas</a>
+    <a href="{{ url_for('chat') }}" role="button">Atendimento</a>
+
+    <div class="barra-busca">
+      <input type="text" placeholder="Buscar" />
+      <button class="botao-buscar">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <section class="cursos-header">
+      <h1>Nossos Cursos</h1>
+      <p>Transforme sua carreira com nossos cursos desenvolvidos para mulheres determinadas como você.</p>
+    </section>
+
+    <section class="cursos-grid">
+      <!-- card 1 -->
+      <div class="curso-card">
+        <img src="{{ url_for('static', filename='Fotos/pexels-divinetechygirl-1181263.jpg') }}"
+          alt="Curso de Tecnologia para Iniciantes" />
+        <div class="curso-info">
+          <h2>Tecnologia para Iniciantes</h2>
+          <p>Aprenda lógica de programação, ferramentas digitais e habilidades essenciais para o mercado tech.</p>
+          <ul>
+            <li><i class="fas fa-clock"></i> Duração: 8 semanas</li>
+            <li><i class="fas fa-signal"></i> Nível: Básico</li>
+            <li><i class="fas fa-certificate"></i> Certificado incluído</li>
+          </ul>
+          <a href="https://www.udemy.com/course/logica-de-programacao-java-python-visualg-e-javascript/?couponCode=LOCLZDOFFPBRTRMT"
+            target="_blank" class="btn-inscrever">Inscreva-se</a>
+        </div>
+      </div>
+
+      <!-- card 2 -->
+      <div class="curso-card">
+        <img src="{{ url_for('static', filename='Fotos/pexels-tima-miroshnichenko-5717509.jpg') }}"
+          alt="Curso de Liderança Feminina" />
+        <div class="curso-info">
+          <h2>Liderança Feminina</h2>
+          <p>Desenvolva habilidades de liderança, gestão de equipes e comunicação assertiva.</p>
+          <ul>
+            <li><i class="fas fa-clock"></i> Duração: 6 semanas</li>
+            <li><i class="fas fa-signal"></i> Nível: Intermediário</li>
+            <li><i class="fas fa-certificate"></i> Certificado incluído</li>
+          </ul>
+          <a href="https://www.udemy.com/course/lideranca-para-mulheres-em-10-passos/?couponCode=LOCLZDOFFPBRTRMT"
+            target="_blank" class="btn-inscrever">Inscreva-se</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-container">
+      <div class="coluna">
+        <div class="coluna-title">Projeto</div>
+        <p><a href="{{ url_for('apresentacao') }}"><i class="fas fa-user-circle"></i> Apresentação Pessoal</a></p>
+        <p><a href="{{ url_for('contribuicao') }}"><i class="fas fa-hands-helping"></i> Contribuição no Projeto</a></p>
+      </div>
+
+      <div class="coluna">
+        <div class="coluna-title"> Institucional</div>
+        <p><a href="{{ url_for('sobre') }}"><i class="fas fa-info-circle"></i> Sobre Nós</a></p>
+        <p><a href="{{ url_for('contato') }}"><i class="fas fa-envelope"></i> Contato</a></p>
+      </div>
+
+      <div class="coluna">
+        <div class="coluna-title"> Legal</div>
+        <p><a href="{{ url_for('politica') }}"><i class="fas fa-user-secret"></i> Política de Privacidade</a></p>
+        <p><a href="{{ url_for('termos') }}"><i class="fas fa-file-contract"></i> Termos de Uso</a></p>
+      </div>
+
+      <div class="coluna">
+        <div class="coluna-title">Parceiros</div>
+        <p><a href="https://www.sp.senac.br/senac-osasco" target="_blank"><i class="fas fa-school"></i> Senac</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menuHorizontal");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/PoliticaeTermos.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <a href="{{ url_for('index') }}">
+      <img id="logo" src="{{ url_for('static', filename='logo/alianca-aurora.png') }}" alt="Logo" />
+    </a>
+    <div class="area-menu">
+      <a href="{{ url_for('cadastro') }}" class="header-link">Cadastro</a>
+      <a href="{{ url_for('login') }}" class="header-link">Login</a>
+      <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+    </div>
+  </header>
+
+  <div id="menuHorizontal" class="menu-horizontal">
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('feed') }}">Feed</a>
+    <a href="{{ url_for('cursos') }}">Cursos</a>
+    <a href="{{ url_for('perfil') }}">Perfil</a>
+    <a href="{{ url_for('vagas') }}">Vagas</a>
+    <a href="{{ url_for('chat') }}">Atendimento</a>
+    <div class="barra-busca">
+      <input type="text" placeholder="Buscar" />
+      <button class="botao-buscar">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <section class="content-section">
+      <h1 class="main-title">Política de Privacidade</h1>
+      <p>Respeitamos a sua privacidade. Esta página descreve como suas informações são coletadas, usadas e protegidas
+        pela plataforma <strong>Aliança Aurora</strong>.</p>
+
+      <h2>1. Coleta de Informações</h2>
+      <p>Coletamos apenas os dados necessários para sua experiência no site, como nome, e-mail e preferências.</p>
+
+      <h2>2. Uso das Informações</h2>
+      <p>As informações são usadas para personalizar seu acesso, melhorar nossos serviços e enviar comunicações úteis.
+      </p>
+
+      <h2>3. Armazenamento e Segurança</h2>
+      <p>Utilizamos práticas seguras de armazenamento e proteção de dados com criptografia e acesso restrito.</p>
+
+      <h2>4. Compartilhamento</h2>
+      <p>Não compartilhamos seus dados com terceiros sem sua autorização, exceto em casos previstos por lei.</p>
+
+      <h2>5. Seus Direitos</h2>
+      <p>Você pode solicitar acesso, correção ou exclusão dos seus dados pessoais a qualquer momento.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-container">
+      <div class="coluna">
+        <div class="coluna-title">Projeto</div>
+        <p><a href="{{ url_for('apresentacao') }}"><i class="fas fa-user-circle"></i> Apresentação Pessoal</a></p>
+        <p><a href="{{ url_for('contribuicao') }}"><i class="fas fa-hands-helping"></i> Contribuição no Projeto</a></p>
+      </div>
+
+      <div class="coluna">
+        <div class="coluna-title"> Institucional</div>
+        <p><a href="{{ url_for('sobre') }}"><i class="fas fa-info-circle"></i> Sobre Nós</a></p>
+        <p><a href="{{ url_for('contato') }}"><i class="fas fa-envelope"></i> Contato</a></p>
+      </div>
+
+      <div class="coluna">
+        <div class="coluna-title"> Legal</div>
+        <p><a href="{{ url_for('politica') }}"><i class="fas fa-user-secret"></i> Política de Privacidade</a></p>
+        <p><a href="{{ url_for('termos') }}"><i class="fas fa-file-contract"></i> Termos de Uso</a></p>
+      </div>
+
+      <div class="coluna">
+        <div class="coluna-title">Parceiros</div>
+        <p><a href="https://www.sp.senac.br/senac-osasco" target="_blank"><i class="fas fa-school"></i> Senac</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menuHorizontal");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</body>
+
+</html>
